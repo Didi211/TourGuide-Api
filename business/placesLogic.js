@@ -2,7 +2,7 @@ import { Client } from '@googlemaps/google-maps-services-js'
 
 
 const findPlaceId = async (latLng) => { 
-    let api_key = process.env.PLACES_API_KEY
+    let api_key = process.env.MAPS_API_KEY
     let client = new Client({});
     try { 
         let response = await client.reverseGeocode({
