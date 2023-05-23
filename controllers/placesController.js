@@ -1,8 +1,8 @@
 import placesLogic from "../business/placesLogic.js";
 
-const findPlaceId = async (req,res) => { 
+const getId = async (req,res) => { 
     try { 
-        let result = await placesLogic.findPlaceId(req.body)
+        let result = await placesLogic.getId(req.body)
         res.status(200).send(result)
     }
     catch(error) { 
@@ -12,5 +12,5 @@ const findPlaceId = async (req,res) => {
 }
 
 export default { 
-    findPlaceId
+    getId
 }

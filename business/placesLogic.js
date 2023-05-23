@@ -1,7 +1,7 @@
 import { Client } from '@googlemaps/google-maps-services-js'
 
 
-const findPlaceId = async (latLng) => { 
+const getId = async (latLng) => { 
     let api_key = process.env.MAPS_API_KEY
     let client = new Client({});
     try { 
@@ -26,5 +26,5 @@ const findPlaceId = async (latLng) => {
 }
 
 export default { 
-    findPlaceId
+    getId
 }
