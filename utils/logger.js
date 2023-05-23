@@ -8,6 +8,7 @@ const getCurrentTimestamp = () => {
 const logAPICallRequest = (url, data) => {
     const timestamp = getCurrentTimestamp();
     console.log(`[${timestamp}] [API CALL] Request: ${url}`);
+    if (data === undefined) return
     console.log(`[${timestamp}] Data:`, typeof data === 'object' ? JSON.stringify(data) : data);
   };
   

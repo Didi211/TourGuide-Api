@@ -5,7 +5,7 @@ const get = async (req,res) => {
     try { 
         logger.logAPICallRequest('POST - getRoute', req.body)
         let result = await routesLogic.getRoute(req.body);
-        logger.logAPICallResponse(result)
+        logger.logAPICallResponse('POST - getRoute',result)
         res.status(200).send(result);
     }
     catch(error) { 
@@ -16,13 +16,13 @@ const get = async (req,res) => {
 
 const test = async (req,res) => { 
     try {
-        logger.logAPICallRequest('POST - test', req.body)
+        logger.logAPICallRequest('POST - test')
         let result = await routesLogic.test();
-        logger.logAPICallResponse(result)
+        logger.logAPICallResponse('POST - test',result)
         res.status(200).send(result);
     } catch (error) {
         logger.logAPICallError(error)    
-        res.status(500).send(error);
+        res.status(500).send(error.message);
     }
 }
 
